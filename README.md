@@ -111,3 +111,7 @@ ERROR: failed to solve: DeadlineExceeded: DeadlineExceeded: DeadlineExceeded: sh
 ```
 
 解决: 参考https://blog.csdn.net/fwzzzzz/article/details/142333600
+
+## 五、docker-compose
+
+启动的时候，需要对内部端口5001做映射，在浏览器中输入<http://127.0.0.1:5001/> 即可访问
