@@ -12,6 +12,8 @@ logging.basicConfig(filename='log/app.log', level=logging.INFO,
 
 IMAGE_LIST = os.environ.get("IMAGE_LIST", ".png, .jpg, .jpeg")
 
+LANGUAGE = os.environ.get("LANGUAGE", "chi_sim+eng")
+
 
 # 定义一个路由，指定支持的请求方法为GET
 @app.route('/')
@@ -53,7 +55,7 @@ def exec_ocr(png_file):
     with open(file_path, 'wb') as f:
         f.write(png_file.read())  # 这里可以写入你想要保存的内容
     app.logger.info(f'文件路径:{file_path}')
-    command = ['tesseract', file_path, "-", 'hocr']
+    command = ["tesseract", file_path, "-", "-l", LANGUAGE, "hocr"]
     try:
         # 执行命令并获取输出
         result = subprocess.run(command, capture_output=True, text=True, check=True)
