@@ -1,6 +1,6 @@
 services:
   api:
-    image: "shuhaojie/online_ocr:v8"
+    image: "shuhaojie/online_ocr:v9"
     ports:
       - "5001:5001"
     volumes:
