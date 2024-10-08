@@ -66,8 +66,10 @@ def exec_ocr(png_file):
 
 
 def render_xml(xml_content):
+    app.logger.info(f'xml内容:\n{xml_content}')
     root = ET.fromstring(xml_content)
     html_content = ET.tostring(root, encoding='unicode', method='html')
+    app.logger.info(f'html内容:\n{html_content}')
     return html_content
 
 
