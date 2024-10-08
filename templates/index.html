@@ -1,0 +1,71 @@
+<!-- templates/upload.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>在线OCR</title>
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin: 10px 0;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<form id="uploadForm" action="/ocr" method="post" enctype="multipart/form-data">
+    <label for="file">上传文件</label>
+    <input type="file" id="file" name="file">
+    <input type="submit" value="提交">
+</form>
+<script>
+    // JavaScript to handle form submission logic
+    document.getElementById('uploadForm').addEventListener('submit', function (event) {
+        var urlInput = document.getElementById('url');
+        var fileInput = document.getElementById('file');
+
+        if ((uploadType === "url" && urlValue.trim() === "") || (uploadType === "file" && fileValue.trim() === "")) {
+            alert("请填写URL或上传文件");
+            return;
+        }
+    });
+</script>
+</body>
+</html>
