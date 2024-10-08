@@ -1,0 +1,10 @@
+services:
+  api:
+    image: "shuhaojie/online_ocr:v8"
+    ports:
+      - "5001:5001"
+    volumes:
+      - ./log:/home/work/log/
+      - ./data:/home/work/data
+    environment:
+      LANGUAGE: "chi_sim+eng"
