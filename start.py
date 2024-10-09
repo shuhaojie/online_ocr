@@ -39,8 +39,7 @@ def ocr_main():
     if not ocr_status:
         return ocr_result
     else:
-        html_content = render_xml(ocr_result)
-        return render_template_string(html_content)
+        return render_template_string(ocr_result)
 
 
 def exec_ocr(png_file):
